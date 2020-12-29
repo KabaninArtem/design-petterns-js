@@ -3,7 +3,8 @@ class Complaints {
         this.complaints = []
     }
 
-    reply(complaint) {}
+    reply(complaint) {
+    }
 
     add(complaint) {
         this.complaints.push(complaint);
@@ -25,10 +26,10 @@ class ServiceComplaints extends Complaints {
 
 class ComplaintRegistry {
     register(customer, type, details) {
-        const id  = Date.now();
+        const id = Date.now();
         const complaint = type === 'service' ? new ServiceComplaints() : new ProductComplaints();
 
-        return complaint.add({ id, customer, details });
+        return complaint.add({id, customer, details});
     }
 }
 
